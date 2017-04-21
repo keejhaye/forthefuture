@@ -16,13 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::post('/receiveOutbound', 'SampleController@bengBang');
 
-Route::get('/bridge', function() {
-    $pusher = App::make('pusher');
+Route::get('/bridge', 'SampleController@getSession');
 
-    $pusher->trigger( 'test-channel',
-                      'test-event', 
-                      array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
 
+
+/* APIs */
+Route::group([], function () {
+	Route::post('/receiveOutbound', 'SampleController@bengBang');
 });

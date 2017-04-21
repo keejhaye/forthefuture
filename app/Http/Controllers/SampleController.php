@@ -11,6 +11,8 @@ use App\Flight;
 use App\Flighttwo;
 use Session;
 use Carbon\Carbon;
+use DB;
+
 
 class SampleController extends Controller
 {
@@ -20,15 +22,25 @@ class SampleController extends Controller
 
     public function bengBang(Request $request){
 
-        $pusher = App::make('pusher');
+        DB::table('comments')->insert(
+            [
+                'body' => 'john@example.com2', 
+                'post_id' => 0,
+                'user_id' => 0
+            ]
+        );
 
+        $pusher = App::make('pusher');
         $pusher->trigger( 'test-channel',
                           'test-event', 
-                          array('text' => 'Preparing the Pusher Laracon.eu workshop!'));
+                          array('text' => 'hey'));
 
+        return json_encode("hey");
 
-        return json_encode($request->input());
+    }
 
+    public function getSession(Request $request){
+        return "qwe";
     }
 
 
