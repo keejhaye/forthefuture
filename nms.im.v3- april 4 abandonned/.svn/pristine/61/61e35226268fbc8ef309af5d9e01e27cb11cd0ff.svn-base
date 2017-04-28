@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      "configure",
+      "C:\\wamp64\\www\\im.v3.laravel\\node_mapper"
+    ]
+  ],
+  "_defaultsLoaded": true,
+  "_engineSupported": true,
+  "_from": "configure@latest",
+  "_id": "configure@0.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/configure",
+  "_nodeVersion": "v0.6.11",
+  "_npmUser": {
+    "email": "randolpho@gmail.com",
+    "name": "randolpho"
+  },
+  "_npmVersion": "1.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "configure",
+    "raw": "configure",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/configure/-/configure-0.0.1.tgz",
+  "_shasum": "54cffdabeb3238b67daab17d2933ec01cac41317",
+  "_shrinkwrap": null,
+  "_spec": "configure",
+  "_where": "C:\\wamp64\\www\\im.v3.laravel\\node_mapper",
+  "author": {
+    "name": "Randolpho St. John"
+  },
+  "bugs": {
+    "url": "https://github.com/randolpho/node-configure/issues"
+  },
+  "config": {
+    "commandLineSwitchName": "config",
+    "defaultConfigFile": "config.json",
+    "notFound": "throw"
+  },
+  "dependencies": {
+    "optimist": ">=0.3.4"
+  },
+  "description": "A simple multiple-configuration management module.",
+  "devDependencies": {},
+  "directories": {
+    "lib": "."
+  },
+  "dist": {
+    "shasum": "54cffdabeb3238b67daab17d2933ec01cac41317",
+    "tarball": "https://registry.npmjs.org/configure/-/configure-0.0.1.tgz"
+  },
+  "engine": {
+    "node": ">=0.6.11"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/randolpho/node-configure#readme",
+  "keywords": [
+    "config",
+    "configure",
+    "configuration",
+    "options",
+    "settings"
+  ],
+  "main": "./main.js",
+  "maintainers": [
+    {
+      "email": "randolpho@gmail.com",
+      "name": "randolpho"
+    }
+  ],
+  "name": "configure",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/randolpho/node-configure.git"
+  },
+  "scripts": {
+    "install": "node install.js",
+    "start": "node install.js",
+    "test": "node ./test/testCoordinator.js"
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      "angular-material",
+      ""
+    ]
+  ],
+  "_from": "angular-material@*",
+  "_id": "angular-material@1.0.0",
+  "_inCache": true,
+  "_location": "/angular-material",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "email": "angular-core+npm@google.com",
+    "name": "angularcore"
+  },
+  "_npmVersion": "2.11.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-material",
+    "raw": "angular-material",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.0.0.tgz",
+  "_shasum": "4ea531787186b26934aa22a8af2a5dc8a74fdb5c",
+  "_shrinkwrap": null,
+  "_spec": "angular-material",
+  "_where": "",
+  "bugs": {
+    "url": "https://github.com/angular/material/issues"
+  },
+  "dependencies": {},
+  "description": "This repo is for distribution on `npm` and `bower`. The source for this module is in the [main Angular Material repo](https://github.com/angular/material). Please file issues and pull requests against that repo.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "4ea531787186b26934aa22a8af2a5dc8a74fdb5c",
+    "tarball": "http://registry.npmjs.org/angular-material/-/angular-material-1.0.0.tgz"
+  },
+  "format": "cjs",
+  "gitHead": "8a0102d4821c13193d1588db34bc72f07b1ee277",
+  "homepage": "https://material.angularjs.org",
+  "installable": true,
+  "jspm": {
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.7",
+      "angular-animate": "github:angular/bower-angular-animate@^1.4.7",
+      "angular-aria": "github:angular/bower-angular-aria@^1.4.7",
+      "css": "systemjs/plugin-css@^0.1.9"
+    },
+    "peerDependencies": {},
+    "shim": {
+      "angular-material": {
+        "deps": []
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "browser",
+    "client-side",
+    "material"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/material/blob/master/LICENSE"
+    }
+  ],
+  "main": "index",
+  "maintainers": [
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+  "name": "angular-material",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7"
+  },
+  "registry": "github",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular/material.git"
+  },
+  "scripts": {},
+  "version": "1.0.0"
+}

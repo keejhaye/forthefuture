@@ -1,0 +1,88 @@
+{
+  "_args": [
+    [
+      {
+        "name": "angular2-color-picker",
+        "raw": "angular2-color-picker",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\xampp\\htdocs\\nms.im.v3"
+    ]
+  ],
+  "_from": "angular2-color-picker@latest",
+  "_id": "angular2-color-picker@1.1.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular2-color-picker",
+  "_nodeVersion": "5.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/angular2-color-picker-1.1.1.tgz_1472080776159_0.4069900007452816"
+  },
+  "_npmUser": {
+    "email": "alberplz@gmail.com",
+    "name": "alberplz"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular2-color-picker",
+    "raw": "angular2-color-picker",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-color-picker/-/angular2-color-picker-1.1.1.tgz",
+  "_shasum": "f1eabb62797d02c2cfb2a35dbc7fb0789bea02ba",
+  "_shrinkwrap": null,
+  "_spec": "angular2-color-picker",
+  "_where": "C:\\xampp\\htdocs\\nms.im.v3",
+  "dependencies": {
+    "@angular/core": "2.0.0-rc.5",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12"
+  },
+  "description": "Angular 2 Color Picker Directive, no dependences required.",
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^3.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.6",
+    "gulp-typings": "^2.0.3",
+    "lite-server": "^2.2.0",
+    "run-sequence": "^1.2.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "f1eabb62797d02c2cfb2a35dbc7fb0789bea02ba",
+    "tarball": "https://registry.npmjs.org/angular2-color-picker/-/angular2-color-picker-1.1.1.tgz"
+  },
+  "gitHead": "f3c8ed9a6775a7283326246ee7df71c17351feb3",
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "alberplz@gmail.com",
+      "name": "alberplz"
+    }
+  ],
+  "name": "angular2-color-picker",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "build": "gulp"
+  },
+  "version": "1.1.1"
+}

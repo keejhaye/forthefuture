@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+body{
+  background-color: #F1F1F1;
+}
+
+form#loginFRM{
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  min-height: 350px;
+  height: auto !important;
+  height: 350px;
+  position: absolute;
+  margin-top: -175px;
+  margin-left: -175px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  box-shadow: #ccc 1px 1px 1px;
+  -moz-box-shadow: #ccc 1px 1px 1px;
+  -webkit-box-shadow: #ccc 1px 1px 1px;
+}
+
+form#loginFRM p{
+  color: #999;
+  text-align: center;
+}
+
+form#loginFRM .note{
+  padding: 5px;
+}
+
+form#loginFRM p a{
+  color: #F87718;
+  text-decoration: none;
+  font: 12px Lucida Sans, Tahoma, Arial, Sans-Serif;
+}
+
+form#loginFRM p a:hover{
+  color: #444;
+  text-decoration: underline;
+}
+
+form#loginFRM h1{
+  color: #333;
+  margin: 0 10px;
+  text-align: center;
+  padding: 20px 15px 10px;
+  border-bottom: 1px solid #ddd;
+  font: bold 25px Lucida Sans, Tahoma, Arial, Sans-Serif;
+}
+
+form#loginFRM h1 span{
+  color: #50B9D0;
+  font-size: 42px;
+  vertical-align: -3px;
+}
+
+form#loginFRM label,
+form#loginFRM input{
+  width: 300px;
+  display: block;
+  margin-left: 25px;
+}
+
+form#loginFRM input{
+  height: 35px;
+  width: 290px;
+  padding: 0 5px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  font: 16px Lucida Sans, Tahoma, Arial, Sans-Serif;
+}
+
+form#loginFRM label{
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font: 15px Lucida Sans, Tahoma, Arial, Sans-Serif;
+}
+
+form#loginFRM input.loginBTN{
+  clear: both;
+  color: #fff;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-left: 130px;
+  background-color: #9CBB30;
+  box-shadow: #ccc 1px 1px 1px;
+  -moz-box-shadow: #ccc 1px 1px 1px;
+  -webkit-box-shadow: #ccc 1px 1px 1px;
+  font: 14px Lucida Sans, Tahoma, Arial, Sans-Serif;
+}
+
+form#loginFRM p.error{
+  color: #fff;
+  padding: 10px 5px;
+  margin: 10px 10px -5px;
+  background-color:#FFA24F;
+  border:1px solid #E46F08;
+  font: 12px Lucida Sans, Tahoma, Arial, Sans-Serif;
+
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+form#loginFRM p.error span{
+  display: block;
+}
+
+form#loginFRM input.remember, form#loginFRM label.remember{
+  height: 15px;
+  display: inline;
+  margin-bottom: 0;
+  float: right;
+}
+
+form#loginFRM input.remember{
+  width: 15px;
+}
+
+form#loginFRM label.remember{
+  margin: -2px 25px 15px 3px;
+  width: auto;
+}

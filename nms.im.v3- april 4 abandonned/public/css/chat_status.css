@@ -1,0 +1,174 @@
+
+.main-toolbar{
+    /* background: #f6f6f6 !important; */
+}
+.md-whiteframe-glow-z1 {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+.queue-attr{
+  background:aqua !important;
+}
+.hide-msg{
+  background: maroon !important;
+}
+.queue-create{
+  background: green !important;
+}
+ .gray { background: #f5f5f5; }
+ .green { background: #66BB6A; }
+ .lightgreen { background: #B9F6CA; }
+ .yellow {background: #ffff8d; }
+ .blue { background: #106CC8; }
+ .lightblue { background: #1CB1F5; }
+ .purple { background: #4D5BB3; }
+ .red {background: #ff8a80; }
+ .tan {background-color: #E1BF76;}
+ .aqua {background-color: #19A093;}
+ .pink {background-color: #FF8A80;}
+ .deep-blue-grey {background-color: #37474F;}
+
+ #conversationsPanel{
+ 	height: 100%;
+ 	width: 100%;
+ } 
+
+ #usersPanel{
+ 	padding-left: 10px;
+
+	max-width: 60% !important; 
+	min-width: 15% !important;
+ }
+
+ md-grid-list{
+ 	padding: 10px;
+ }
+ md-grid-tile-body{
+    height: 100% !important;
+    width: 100%;
+    padding-left: 5px;
+    /* padding-right: 5px; */
+    margin-top: 110px;
+    max-height: 100% !important;
+ 
+ }
+ .searchContainer{
+    padding-bottom: 0;
+    margin-bottom: -25px;
+	float:right;
+	font-size: 16px;
+    padding-right: 10px;
+    padding-left: 10px;
+ }
+ md-grid-tile-body{
+ 	color : white !important;
+ }
+ #sidebar-resizer {
+	background-color: #666;
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 200px;
+    width: 6px;
+    cursor: e-resize;
+}
+ #sidebar-resizer:hover, #preview-resizer:hover {
+	background-color: #AAA;
+}
+.rg-right{
+	background-color: #A1887F !important;
+	right:0;
+	position: absolute;
+	float: right;
+	border-radius: 5px;
+}
+.usersToolbar {
+	background: #1E88E5 !important;
+	right: 14px !important;
+}
+ul {
+    list-style: none;
+}
+ul li {
+	cursor: pointer;
+	padding: 10px;
+	height: 100%;
+	margin-left: -40px !important;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+.userUnavailable {
+	background: #e57373 !important;
+}
+.userAvailable {
+	background: #81C784 !important;
+}
+
+md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 300px !important;
+    width: 80vw !important;
+    max-width: 450px !important;
+} 
+.edit-settings,.save-settings,.cancel-settings{
+	transition: ease-in-out .1s;
+}
+.save-settings{
+	background: #13CD4A !important;
+}
+.edit-settings{
+	background: orange !important;
+}
+.cancel-settings{
+	background: red !important;
+}
+
+h1.counter{
+  color: #ffffff;
+  font-size: 90px;
+}
+
+.obj-layout-header {
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  padding: 15px 0;
+}
+
+.obj-layout-header h3{
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 0 0 16px;
+}
+
+.obj-layout-container {
+  height: inherit;
+  width: inherit;
+}
+
+.obj-table-container{
+  height: calc(100% - 10%);
+  overflow-y: scroll;
+}
+
+.obj-table{
+  table-layout: auto;
+  width: 100%;
+}
+
+.obj-table, .obj-table td, .obj-table th {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #ffffff !important;
+  border-collapse: collapse;
+  vertical-align: initial;
+  font-size: 12px;
+}
+
+.obj-table th {
+  color: #ffffff !important;
+}
+
+.obj-table td {
+  color: #ffffff !important;
+  padding: 2px;
+}

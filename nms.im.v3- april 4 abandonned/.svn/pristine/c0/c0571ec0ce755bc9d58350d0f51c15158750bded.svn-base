@@ -1,0 +1,32 @@
+table#overview td.group-header {
+	color:#8F8F8F;
+	font-size:70%;
+	border-bottom:1px solid #8F8F8F;
+	border-top:1px solid #8F8F8F;
+}
+
+table#overview td.modifier {
+	cursor:pointer;
+	border:1px solid #5F5F5F;
+}
+
+table#overview td.red {
+	background-color:#DFB5B5;
+}
+
+table#overview td.green {
+	background-color:#9EFF7F;
+}
+
+div#test_result textarea#test_result_area {
+	color:#0F0;
+	height: 15em;
+	font-size:0.70em;
+	background-color:#000;
+	border:1px solid #CCC;
+	font-family:lucida console;
+}
+
+table#overview td{
+	padding: 0;
+}

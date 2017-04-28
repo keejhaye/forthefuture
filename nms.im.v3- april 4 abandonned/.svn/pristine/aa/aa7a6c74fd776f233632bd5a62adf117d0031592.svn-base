@@ -1,0 +1,100 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "phpdate-js",
+        "scope": null,
+        "escapedName": "phpdate-js",
+        "name": "phpdate-js",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\xampp\\htdocs\\imv3"
+    ]
+  ],
+  "_from": "phpdate-js@latest",
+  "_id": "phpdate-js@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/phpdate-js",
+  "_nodeVersion": "0.10.29",
+  "_npmUser": {
+    "name": "andrasq",
+    "email": "andras@andrasq.com"
+  },
+  "_npmVersion": "3.5.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "phpdate-js",
+    "scope": null,
+    "escapedName": "phpdate-js",
+    "name": "phpdate-js",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/phpdate-js/-/phpdate-js-1.0.2.tgz",
+  "_shasum": "1a304fac456f1c33d1736fe741fdc8d9c5939424",
+  "_shrinkwrap": null,
+  "_spec": "phpdate-js",
+  "_where": "D:\\xampp\\htdocs\\imv3",
+  "author": {
+    "name": "Andras",
+    "url": "http://github.com/andrasq"
+  },
+  "bugs": {
+    "url": "https://github.com/andrasq/phpdate-js/issues"
+  },
+  "dependencies": {},
+  "description": "fast php date() work-alike for nodejs",
+  "devDependencies": {
+    "arlib": "0.1",
+    "nodeunit": "0.9.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "1a304fac456f1c33d1736fe741fdc8d9c5939424",
+    "tarball": "https://registry.npmjs.org/phpdate-js/-/phpdate-js-1.0.2.tgz"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "gitHead": "e5b6be3c68ee4116f68cee025f80343813b9241b",
+  "homepage": "https://github.com/andrasq/phpdate-js#readme",
+  "keywords": [
+    "Andras",
+    "date",
+    "time",
+    "format",
+    "conversion",
+    "quick",
+    "fast",
+    "nodejs",
+    "js",
+    "php"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "andrasq",
+      "email": "andras@andrasq.com"
+    }
+  ],
+  "name": "phpdate-js",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrasq/phpdate-js.git"
+  },
+  "scripts": {
+    "test": "nodeunit"
+  },
+  "version": "1.0.2"
+}
