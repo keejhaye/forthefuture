@@ -6,10 +6,41 @@ function UsersController($scope, $http, API_URL, transformRequestAsFormPost, $do
     };
    
     $scope.frmInfo = frm_defaults;
-$http.get(API_URL + "users/get_users")
+
+    // -- Kris' changes 5/9/2017
+    $scope.pageno = 0; 
+    $scope.total_count = 0;
+    $scope.itemsPerPage = 10;
+    $scope.getData = function(pageno){ 
+        $scope.users = [];  
+        $http.get(API_URL + "users/get_paganated_users/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10").success(function(response){ 
+            $scope.users = response;  
+        });
+    };
+    $scope.getData($scope.pageno); 
+
+    $http.get(API_URL + "users/count_all_users")
             .success(function (response) {
-                $scope.users = response;
+                $scope.total_count = response;
             });
+
+    $scope.searchUsers = function(searchKeys, searchCol){
+        if (searchKeys.length > 0) {
+            $http.get(API_URL + "users/get_search_users/"+searchKeys+"/"+searchCol+"")
+                .success(function(response){ 
+                    $scope.users = response;  
+                    $scope.total_count = response.length;
+                });
+        }
+    }
+
+    // -- Kris' changes 5/9/2017
+
+    // $http.get(API_URL + "users/get_users")
+    //     .success(function (response) {
+    //         $scope.users = response;
+    //     });
+
     function get_users(){
          $http.get(API_URL + "users/get_users")
             .success(function (response) {

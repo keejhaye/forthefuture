@@ -12,6 +12,23 @@ class Users extends Controller {
         return view('panel/UsersContent')->with('page_title', 'Users');
     }
 
+    //  -- Kris' changes 5/8/2017
+    public function getUsersByPage($offset, $limit){
+        $users = \TblUsers::orderBy('id', 'asc')->skip($offset)->take($limit); 
+        return $users->get(); 
+    }
+
+    public function countAllUsers(){
+        $cnt = \TblUsers::orderBy('id', 'asc');
+        return $cnt->count();
+    }
+
+    public function getSearchUsers($searchKey, $searchCol){
+        $searchUsers = \TblUsers::orderBy('id', 'asc')->where($searchCol, 'like', '%'.$searchKey.'%');
+        return $searchUsers->get(); 
+    }
+    //  -- Kris' changes 5/8/2017
+
     public function users($id = null) {
             if ($id == null) {
             return \TblUsers::orderBy('id', 'asc')->get();

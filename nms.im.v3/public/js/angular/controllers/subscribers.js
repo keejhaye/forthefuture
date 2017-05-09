@@ -1,9 +1,28 @@
 function SubscribersController($scope, $http, API_URL, transformRequestAsFormPost) {
 //retrieve employees listing from API
-    $http.get(API_URL + "subscribers/get_subscribers")
+
+    // -- Kris' changes 5/9/2017
+    $scope.pageno = 0; 
+    $scope.total_count = 0;
+    $scope.itemsPerPage = 10;
+    $scope.getData = function(pageno){ 
+        $scope.subscribers = [];  
+        $http.get(API_URL + "subscribers/get_paganated_subscribers/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10").success(function(response){ 
+            $scope.subscribers = response;  
+        });
+    };
+    $scope.getData($scope.pageno); 
+
+    $http.get(API_URL + "subscribers/count_all_subscribers")
             .success(function (response) {
-                $scope.subscribers = response;
+                $scope.total_count = response;
             });
+    // -- Kris' changes 5/9/2017
+
+    // $http.get(API_URL + "subscribers/get_subscribers")
+    //         .success(function (response) {
+    //             $scope.subscribers = response;
+    //         });
 
     function get_subscribers(){
          $http.get(API_URL + "subscribers/get_subscribers")

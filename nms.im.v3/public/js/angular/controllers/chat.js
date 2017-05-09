@@ -158,8 +158,11 @@ function ChatController($scope, $socket, focus, $timeout, $filter, $interval, mo
     $socket.on('initial_conversations', function (conversations) {
         console.log("SOCKET: INITIAL CONVERSATIONS")
         var initial_socket_time = moment().format('YYYY-MM-DD HH:mm:ss')
+        console.log("-------------->", conversations)
         
         angular.forEach(conversations, function (conversation) {
+
+        console.log("baby i like that smile....->",$scope.services[conversation.service_id].allow_multiple_reply)
             conversation['conversation_id'] = conversation.id
             conversation.hidden = false
             messagesIds = Object.keys(conversation.messages)
@@ -430,6 +433,8 @@ function ChatController($scope, $socket, focus, $timeout, $filter, $interval, mo
         if (e.keyCode === 13) //USER PRESSED 'ENTER'
         {
             e.preventDefault()
+
+
             //Check length of the message.
             if($scope.conversations[conversation_id].outbound_message === undefined || $scope.conversations[conversation_id].outbound_message.length < $scope.services[$scope.conversations[conversation_id].service_id].min_char){
                 $mdDialog.show(

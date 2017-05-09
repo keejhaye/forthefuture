@@ -30,9 +30,13 @@
             <div class="col-md-3">
                 <h2 class="side-header">Service List</h2>
                 <div class="bulletin-list">
+
+                    <ul ng-show="services.length <= 0">
+                        <li style="text-align:center;">Loading services!</li>
+                    </ul>
                     <ul>
                      <!-- <li ng-repeat="service in services"> -->
-                        <li dir-paginate="service in services|filter:search|itemsPerPage:10" pagination-id="service">
+                        <li dir-paginate="service in services|filter:search|itemsPerPage:itemsPerPage" total-items="total_count" pagination-id="service">
                             <a href="#" ng-click="toggle('edit', service.id)"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <%service.name%></a>
                         </li>
 
@@ -41,7 +45,8 @@
                         pagination-id="service"
                         max-size="3"
                         direction-links="true"
-                        boundary-links="true" >
+                        boundary-links="true" 
+                        on-page-change="getData(newPageNumber)" >
                     </dir-pagination-controls>
 
                 </div>

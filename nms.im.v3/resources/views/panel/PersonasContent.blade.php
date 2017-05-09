@@ -43,15 +43,20 @@
                 <h2 class="side-header">Personas List</h2>
 
                 <div class="bulletin-list">
+                
+                    <ul ng-show="personas.length <= 0">
+                        <li style="text-align:center;">Loading personas!</li>
+                    </ul>
                     <ul>
-                        <li dir-paginate="persona in personas|filter:search|itemsPerPage:10" >
+                        <li dir-paginate="persona in personas|filter:search|itemsPerPage:itemsPerPage" total-items="total_count" >
                             <a href="#" ng-click="toggle('edit', persona.id)"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> <%persona.name%> </a>
                         </li>
                     </ul>
                     <dir-pagination-controls
                         max-size="3"
                         direction-links="true"
-                        boundary-links="true" >
+                        boundary-links="true"
+                        on-page-change="getData(newPageNumber)" >
                     </dir-pagination-controls>
 
                 </div>

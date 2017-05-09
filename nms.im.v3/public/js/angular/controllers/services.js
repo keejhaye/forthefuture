@@ -5,11 +5,28 @@ function ServicesController($scope, $http, API_URL, transformRequestAsFormPost, 
     };
     var vm = this;
 
+    // -- Kris' changes 5/9/2017
+    $scope.pageno = 0; 
+    $scope.total_count = 0;
+    $scope.itemsPerPage = 10;
+    $scope.getData = function(pageno){ 
+        $scope.services = [];  
+        $http.get(API_URL + "context/get_paganated_services/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10").success(function(response){ 
+            $scope.services = response;  
+        });
+    };
+    $scope.getData($scope.pageno); 
 
-    $http.get(API_URL + "context/get_services")
+    $http.get(API_URL + "context/count_all_services")
             .success(function (response) {
-                $scope.services = response;
+                $scope.total_count = response;
             });
+    // -- Kris' changes 5/9/2017
+
+    // $http.get(API_URL + "context/get_services")
+    //         .success(function (response) {
+    //             $scope.services = response;
+    //         });
 
     function getServices(){
         $http.get(API_URL + "context/get_services")

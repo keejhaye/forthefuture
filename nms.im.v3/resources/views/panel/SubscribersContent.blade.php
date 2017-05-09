@@ -40,8 +40,13 @@
                 <h2 class="side-header">Subscribers List</h2>
 
                      <div class="bulletin-list">
+
+                        <ul ng-show="subscribers.length <= 0">
+                            <li style="text-align:center;">Loading subscribers!</li>
+                        </ul>
+
                         <ul>
-                            <li dir-paginate="subscriber in subscribers|filter:search|itemsPerPage:10" >
+                            <li dir-paginate="subscriber in subscribers|filter:search|itemsPerPage:itemsPerPage" total-items="total_count">
                              <a ng-if="subscriber.status == 'blocked'" href="#" ng-click="toggle('edit', subscriber.id)"><i class="fa fa-dot-circle-o" aria-hidden="true" style="color:#181518"><%subscriber.name%></i> </a>
                             <a ng-if="subscriber.status == 'inactive'" href="#" ng-click="toggle('edit', subscriber.id)"><i class="fa fa-dot-circle-o" aria-hidden="true" style="color:red"><%subscriber.name%> </i> </a>
                                <a ng-if="subscriber.status == 'active'" href="#" ng-click="toggle('edit', subscriber.id)"><i class="fa fa-dot-circle-o" aria-hidden="true"><%subscriber.name%></i> </a>
@@ -50,7 +55,8 @@
                       <dir-pagination-controls
                             max-size="3"
                             direction-links="true"
-                            boundary-links="true" >
+                            boundary-links="true" 
+                            on-page-change="getData(newPageNumber)" >
                         </dir-pagination-controls>
 
 

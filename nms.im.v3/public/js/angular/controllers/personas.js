@@ -1,10 +1,28 @@
 function PersonasController($scope, $http, API_URL, transformRequestAsFormPost) {
    
-    $http.get(API_URL + "personas/get_personas")
+    // -- Kris' changes 5/8/2017
+    $scope.pageno = 0; 
+    $scope.total_count = 0;
+    $scope.itemsPerPage = 10;
+    $scope.getData = function(pageno){ 
+        $scope.personas = [];  
+        $http.get(API_URL + "personas/get_paganated_personas/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10").success(function(response){ 
+            $scope.personas = response;  
+        });
+    };
+    $scope.getData($scope.pageno); 
+
+    $http.get(API_URL + "personas/count_all_personas")
             .success(function (response) {
-                $scope.personas = response;
-             //   searchService();
+                $scope.total_count = response;
             });
+    // -- Kris' changes 5/8/2017
+
+    // $http.get(API_URL + "personas/get_personas")
+    //         .success(function (response) {
+    //             $scope.personas = response;
+    //          //   searchService();
+    //         });
 
     function get_personas(){
          $http.get(API_URL + "personas/get_personas")

@@ -12,6 +12,18 @@ class Context extends Controller {
         return view('panel/ContextContent')->with('page_title', 'Services');
     }
 
+    //  -- Kris' changes 5/8/2017
+    public function getServicesByPage($offset, $limit){
+        $personas = \TblServices::orderBy('id', 'asc')->skip($offset)->take($limit); 
+        return $personas->get(); 
+    }
+
+    public function countAllServices(){
+        $cnt = \TblServices::orderBy('id', 'asc');
+        return $cnt->count();
+    }
+    //  -- Kris' changes 5/8/2017
+
     public function search(Request $request){
         return \TblServices::orderBy('id', 'asc')->get();
     }

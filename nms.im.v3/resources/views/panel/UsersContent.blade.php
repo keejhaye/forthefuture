@@ -17,13 +17,13 @@
                             <form class="form-horizontal" role="form" >
                                 <div class="form-group">
                                     <label class="control-label">Username:</label>
-                                    <input type="text" id="service" name="service"  ng-model="search.username" class="form-control" placeholder="Username">
+                                    <input type="text" id="service" name="service"  ng-model="username" ng-change="searchUsers(username, username)" ng-pattern="/^[a-zA-Z0-9._-]+$/" ng-trim="false" class="form-control" placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                 <label for="role">User Role:</label>
-                                    <select class="form-control" id="role" name="role" ng-model="search.role_id">
+                                    <select class="form-control" id="role" name="role" ng-model="role_id" ng-change="searchUsers(role_id, role_id)">
                                     <option value="" disabled selected>Role</option>
-                                        <option value="">All</option>
+                                        <option value="all">All</option>
                                         <option value="3">Admin</option>
                                         <option value="4">Manager</option>
                                         <option value="5">Operator-FT</option>
@@ -57,8 +57,12 @@
             <div class="col-md-3">
                 <h2 class="side-header">Users List</h2>
                 <div class="bulletin-list">
+
+                    <ul ng-show="users.length <= 0">
+                        <li style="text-align:center;">Loading users!</li>
+                    </ul>
                     <ul>
-                        <li dir-paginate="user in users|filter:search|itemsPerPage:10" >
+                        <li dir-paginate="user in users|filter:search|itemsPerPage:itemsPerPage" total-items="total_count" >
                           
                            <a ng-if="user.status == 'inactive'" href="#" ng-click="toggle('edit', user.id)"><i class="fa fa-dot-circle-o" aria-hidden="true" style="color:red"><%user.username%>  | <%user.firstname%> <%user.lastname%> </i> </a>
                            <a ng-if="user.status == 'active'" href="#" ng-click="toggle('edit', user.id)"><i class="fa fa-dot-circle-o" aria-hidden="true"><%user.username%>  | <%user.firstname%> <%user.lastname%> </i> </a>
@@ -67,7 +71,8 @@
                     <dir-pagination-controls
                         max-size="3"
                         direction-links="true"
-                        boundary-links="true" >
+                        boundary-links="true" 
+                        on-page-change="getData(newPageNumber)" >
                     </dir-pagination-controls>
                 </div>
             </div>

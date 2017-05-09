@@ -12,6 +12,26 @@ class Personas extends Controller {
         return view('panel/PersonasContent')->with('page_title', 'Personas');
     }
 
+    //  -- Kris' changes 5/8/2017
+    public function getPersonasByPage($offset, $limit){
+        $personas = \TblPersonas::orderBy('id', 'asc')->skip($offset)->take($limit); 
+        
+        if(session()->get('user.role_id') == 6){
+            $personas->whereIn('service_id', session()->get('user.services'));
+        }
+        return $personas->get(); 
+    }
+
+    public function countAllPersonas(){
+        $cnt = \TblPersonas::orderBy('id', 'asc');
+
+        if(session()->get('user.role_id') == 6){
+            $cnt->whereIn('service_id', session()->get('user.services'));
+        }
+        return $cnt->count();
+    }
+    //  -- Kris' changes 5/8/2017
+
     public function personas($id = null) {
         if ($id == null) {
             $personas = \TblPersonas::orderBy('id', 'asc');

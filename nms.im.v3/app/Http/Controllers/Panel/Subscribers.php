@@ -12,6 +12,26 @@ class Subscribers extends Controller {
         return view('panel/SubscribersContent')->with('page_title', 'Subscribers');
     }
 
+    //  -- Kris' changes 5/8/2017
+    public function getSubscribersByPage($offset, $limit){
+        $personas = \TblSubscribers::orderBy('id', 'asc')->skip($offset)->take($limit); 
+        
+        if(session()->get('user.role_id') == 6){
+            $personas->whereIn('service_id', session()->get('user.services'));
+        }
+        return $personas->get(); 
+    }
+
+    public function countAllSubscribers(){
+        $cnt = \TblSubscribers::orderBy('id', 'asc');
+
+        if(session()->get('user.role_id') == 6){
+            $cnt->whereIn('service_id', session()->get('user.services'));
+        }
+        return $cnt->count();
+    }
+    //  -- Kris' changes 5/8/2017
+
     public function subscribers($id = null) {
         if ($id == null) {
             $subscribers = \TblSubscribers::orderBy('id', 'asc')->limit('2000');

@@ -71,17 +71,30 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('panel/users/get_users/{id?}', 'Panel\Users@users');
     Route::post('panel/users/add', 'Panel\Users@add');
     Route::post('panel/users/update/{id}', 'Panel\Users@update');
+    // -- Kris' changes 5/9/2017
+    Route::get('panel/users/get_paganated_users/{offset}/{limit}', 'Panel\Users@getUsersByPage');
+    Route::get('panel/users/count_all_users', 'Panel\Users@countAllUsers');
+    Route::get('panel/users/get_search_users/{searchKey}/{searchCol}', 'Panel\Users@getSearchUsers');
+    // -- Kris' changes 5/9/2017
 
     Route::get('panel/context', 'Panel\Context@index');
     Route::get('panel/context/get_services/{id?}', 'Panel\Context@services');
     Route::post('panel/context/search', 'Panel\Context@search');
     Route::post('panel/context/add', 'Panel\Context@add');
     Route::post('panel/context/update/{id}', 'Panel\Context@update');
+    // -- Kris' changes 5/9/2017
+    Route::get('panel/context/get_paganated_services/{offset}/{limit}', 'Panel\Context@getServicesByPage');
+    Route::get('panel/context/count_all_services', 'Panel\Context@countAllServices');
+    // -- Kris' changes 5/9/2017
 
     Route::get('panel/personas', 'Panel\Personas@index');
     Route::get('panel/personas/get_personas/{id?}', 'Panel\Personas@personas');
     Route::post('panel/personas/add', 'Panel\Personas@add');
     Route::post('panel/personas/update/{id}', 'Panel\Personas@update');
+    // -- Kris' changes 5/9/2017
+    Route::get('panel/personas/get_paganated_personas/{offset}/{limit}', 'Panel\Personas@getPersonasByPage');
+    Route::get('panel/personas/count_all_personas', 'Panel\Personas@countAllPersonas');
+    // -- Kris' changes 5/9/2017
 
     Route::get('panel/subscribers', 'Panel\Subscribers@index');
     Route::get('panel/subscribers/get_subscribers/{id?}', 'Panel\Subscribers@subscribers');
@@ -90,6 +103,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('panel/subscribers/get_conversation_history/{id}', 'Panel\Subscribers@get_conversation_history');
     Route::get('panel/subscribers/get_messages/{id}', 'Panel\Subscribers@get_messages');
     Route::get('panel/subscribers/add_to_blacklist/{id}', 'Panel\Subscribers@add_to_blacklist');
+    // -- Kris' changes 5/9/2017
+    Route::get('panel/subscribers/get_paganated_subscribers/{offset}/{limit}', 'Panel\Subscribers@getSubscribersByPage');
+    Route::get('panel/subscribers/count_all_subscribers', 'Panel\Subscribers@countAllSubscribers');
+    // -- Kris' changes 5/9/2017
 
     Route::get('panel/user_activity', 'Panel\UserActivity@index');
     Route::get('panel/user_activity/get_logs/{id?}', 'Panel\UserActivity@logs');
