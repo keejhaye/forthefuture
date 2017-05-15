@@ -35,8 +35,23 @@ class Personas extends Controller {
         return $cnt->count();
     }
 
-    public function getSearchPersonas($searchCol, $searchKey){
-        $searchPersonas = \TblPersonas::orderBy('id', 'asc')->where($searchCol, 'like', '%'.$searchKey.'%');
+    public function getSearchPersonas($searchCol, $searchKey, $searchParams = null){
+        var_dump($searchParams);
+        $searchPersonas = \TblPersonas::orderBy('id', 'asc');
+        $searchPersonas->leftJoin('tbl_services', 'tbl_personas.service_id', '=', 'tbl_services.id');
+        $searchPersonas->select('tbl_personas.*', 'tbl_services.name AS service_name');
+        if ($searchParams !== null) {
+            $aSearch = json_decode($searchParams, true);
+            if(isset($aSearch[0]['name'])){
+                $searchPersonas->where('tbl_personas.name', 'like', '%'.$aSearch[0]['name'].'%');
+            } 
+            if(isset($aSearch[0]['service_id'])){
+                $searchPersonas->where('tbl_services.name', 'like', '%'.$aSearch[0]['service_id'].'%');
+            } 
+            if(isset($aSearch[0]['persona_status'])){
+                $searchPersonas->where('tbl_personas.status', $aSearch[0]['persona_status']);
+            } 
+        }
         return $searchPersonas->get(); 
     }
     //  -- Kris' changes 5/8/2017

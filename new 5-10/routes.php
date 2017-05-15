@@ -83,9 +83,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('panel/personas/add', 'Panel\Personas@add');
     Route::post('panel/personas/update/{id}', 'Panel\Personas@update');
     // -- Kris' changes 5/9/2017
-    Route::get('panel/personas/get_paganated_personas/{offset}/{limit}/{pname?}', 'Panel\Personas@getPersonasByPage');
+    Route::get('panel/personas/get_paginated_personas/{offset}/{limit}/{pname?}', 'Panel\Personas@getPersonasByPage');
     Route::get('panel/personas/count_all_personas', 'Panel\Personas@countAllPersonas');
-    Route::get('panel/personas/get_search_users/{searchKey}/{searchCol}', 'Panel\Personas@getSearchPersonas');
+    Route::get('panel/personas/get_search_users/{searchKey}/{searchCol}/{searchParams?}', 'Panel\Personas@getSearchPersonas');
     // -- Kris' changes 5/9/2017
 
     Route::get('panel/subscribers', 'Panel\Subscribers@index');

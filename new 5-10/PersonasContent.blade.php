@@ -18,12 +18,12 @@
                                     <label class="control-label">Keyword:</label>
                                     <input type="text" id="keyword" name="keyword" ng-model="personasName" class="form-control" placeholder="Keyword" ng-change="searchPersonas(personasName, 'name')">
                                 </div>  
-                                <!-- <div class="form-group">
-                                <input type="text" id="service" ng-model="serviceId" name="service" placeholder="Service Name" class="form-control" ng-change="searchPersonas(service_id, 'serviceId')">
-                            </div> -->
+                                <div class="form-group">
+                                <input type="text" id="service" ng-model="serviceId" name="service" placeholder="Service Name" class="form-control" ng-change="searchPersonas(serviceId, 'service_id')">
+                            </div>
 
                             <div class="form-group">
-                                    <select class="form-control" id="status" name="status" ng-model="search.status">
+                                    <select class="form-control" id="status" name="status" ng-model="persona_status" ng-change="searchPersonas(persona_status, 'status')">
                                     <option value="" disabled selected>Status</option>
                                         <option value="">All</option>
                                         <option value="active">Active</option>

@@ -8,16 +8,14 @@ function PersonasController($scope, $http, API_URL, transformRequestAsFormPost, 
         $scope.personas = [];  
 
         if ($scope.personasName !== undefined) {
-            let myURL = "http://localhost/nms.im.v3/public/panel/personas/get_paganated_personas/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10/"+$scope.personasName;
-             console.log("1->",myURL);
+            let myURL = API_URL + "personas/get_paginated_personas/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10/"+$scope.personasName;
             $http.get(myURL)
                 .success(function(response){ 
                    
                     $scope.personas = response;  
                 });
         }else {
-            console.log("2->",API_URL)
-            $http.get("http://localhost/nms.im.v3/public/panel/personas/get_paganated_personas/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10")
+            $http.get(API_URL + "personas/get_paginated_personas/"+((pageno >= 1 ? pageno-1 : pageno)*10)+"/10?q=qwe")
                 .success(function(response){ 
                     $scope.personas = response;  
                     get_personas_count();
@@ -28,15 +26,31 @@ function PersonasController($scope, $http, API_URL, transformRequestAsFormPost, 
 
 
     $scope.searchPersonas = function(searchKeys, searchCol){
+        
+        var aSearchData = [{}];
+        if ($scope.personasName !== undefined) {
+            aSearchData[0]['name'] = $scope.personasName;
+        }
+        if ($scope.serviceId !== undefined) {
+            aSearchData[0]['service_id'] = $scope.serviceId;
+        }
+        if ($scope.persona_status !== undefined) {
+            aSearchData[0]['persona_status'] = $scope.persona_status;
+        }
+        var arrStr = encodeURIComponent(JSON.stringify(aSearchData));
+
+
         $scope.currentPage = 1;
         if (searchKeys.length > 0) {
-            $http.get(API_URL + "personas/get_search_users/"+searchCol+"/"+searchKeys+"")
+            $http.get(API_URL + "personas/get_search_users/"+searchCol+"/"+searchKeys+"/"+arrStr+"")
                 .success(function(response){ 
+                    // alert(response);
                     $scope.is_no_search_result = true;
                     $scope.personas = response;  
                     $scope.total_count = response.length;
                 });
         }else { 
+
             $scope.personasName = undefined;
             $http.get(API_URL + "personas/get_personas")
                 .success(function(response){ 
